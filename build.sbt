@@ -39,7 +39,7 @@ lazy val commonSettings = formatSettings ++ Seq(
 
   dependencyOverrides ++= Set(
     //transitive dep from com.couchbase.client:core-io
-    "io.reactivex"    % "rxjava"        % "1.0.17",
+    "io.reactivex"    % "rxjava"        % "1.1.1",
     "org.scala-lang"  % "scala-reflect" % scalaVersion.value // % Optional
   ),
 
@@ -55,7 +55,8 @@ lazy val core = (project in file("core"))
   .settings(commonSettings ++ Seq(
     name := "couchbase-scala",
     libraryDependencies ++= Seq(
-      "com.couchbase.client"      %  "java-client"        % "2.2.2",
+      "com.couchbase.client"      %  "java-client"        % "2.2.4",
+      "io.reactivex"              %% "rxscala"            % "0.26.0",
       "javax.inject"              % "javax.inject"        % "1",
       "com.typesafe.play"         %% "play-json"          % "2.4.6", //require java 8
       "com.google.inject"         % "guice"               % "4.0"       % Test
